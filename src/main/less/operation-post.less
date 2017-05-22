@@ -1,0 +1,51 @@
+ul.endpoints {
+  li.endpoint {
+    ul.operations {
+      li.operation.post {
+        div.heading {
+          //background-color: #00bcd4;
+          border: 1px solid #c3e8d1;
+          h3 {
+            span.http_method {
+              a {
+                background:#607d8b;
+                font-weight: 400;
+                &:hover{
+                  background: #455a64;
+                }
+              }
+            }
+          }
+          ul.options {
+            li {
+              border-right: 1px solid #dddddd;
+              border-right-color: #c3e8d1;
+              color: #10a54a;
+              a {
+                color: #10a54a;
+              }
+            }
+          }
+        }
+        div.content {
+          //h4 {
+          //    color: #10a54a;
+          //}
+          div.sandbox_header {
+            a {
+              color: #6fc992;
+            }
+          }
+        }
+        .signature-nav{
+          a{
+            &.selected{
+              color: #455a64;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

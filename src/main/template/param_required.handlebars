@@ -1,0 +1,32 @@
+<td  data-th="Parameter" class='  wrapper_required_label code required'><label for='{{{escape valueId}}}'>{{{escape name}}}</label></td>
+<td data-th="Value" class="wrapper__textarea" >
+	{{#if isBody}}
+		{{#if isFile}}
+			<input type="file" name='{{{escape name}}}' id='{{{escape valueId}}}'/>
+		{{else}}
+			{{#if default}}
+				<div class="editor_holder"></div>
+				<textarea class='body-textarea required' placeholder='(required)' name='{{{sanitize name}}}' id="{{{escape valueId}}}">{{{sanitize default}}}</textarea>
+        <br />
+        <div class="parameter-content-type" />
+			{{else}}
+				<textarea class='body-textarea required' placeholder='(required)' name='{{{sanitize name}}}' id='{{{escape valueId}}}'></textarea>
+				<div class="editor_holder"></div>
+				<br />
+				<div class="parameter-content-type" />
+			{{/if}}
+		{{/if}}
+	{{else}}
+		{{#if isFile}}
+			<input class='parameter' class='required' type='file' name='{{{sanitize name}}}' id='{{{escape valueId}}}'/>
+		{{else}}
+			{{#renderTextParam this}}
+			{{/renderTextParam}}
+		{{/if}}
+	{{/if}}
+</td>
+<td data-th="Description">
+	<span class="markdown">{{{sanitize description}}}</span>
+</td>
+<td data-th="Parameter Type">{{{escape paramType}}}</td>
+<td data-th="Data Type"><span class="model-signature"></span></td>

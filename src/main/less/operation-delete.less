@@ -1,0 +1,53 @@
+ul.endpoints {
+  li.endpoint {
+    ul.operations {
+      li.operation.delete {
+        div.heading {
+          //background-color: #00bcd4;
+          border: 1px solid #e8c6c7;
+          h3 {
+            span.http_method {
+              a {
+                text-transform: uppercase;
+                background-color: #ec407a;
+                font-weight: 400;
+                &:hover{
+                  background: #e91e63;
+                }
+              }
+            }
+          }
+          ul.options {
+            li {
+              border-right: 1px solid #dddddd;
+              border-right-color: #e8c6c7;
+              color: #a41e22;
+              a {
+                color: #a41e22;
+              }
+            }
+          }
+        }
+        div.content {
+          div.sandbox_header {
+            a {
+              color: #c8787a;
+            }
+          }
+        }
+        .operation-params{
+          .parameter{
+            padding: 3px 5px ;
+            .box-sizing();
+            .transition( 0.2s ease);
+            &:focus{
+              outline: none;
+              border-color: #ec407a ;
+              .transition( 0.4s ease);
+            }
+          }
+        }
+      }
+    }
+  }
+}

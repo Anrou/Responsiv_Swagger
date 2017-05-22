@@ -1,0 +1,36 @@
+<td data-th="Parameter" class='code class'><label for='{{{escape valueId}}}'>{{{escape name}}}</label></td>
+<td data-th="Value">
+
+	{{#if isBody}}
+		{{#if isFile}}
+			<input type="file" name='{{{escape name}}}' id='{{{escape valueId}}}'/>
+			<div class="parameter-content-type" />
+		{{else}}
+			{{#if default}}
+				<div class="editor_holder"></div>
+				<textarea class='body-textarea' name='{{{escape name}}}' id='{{{escape valueId}}}'>{{{escape default}}}</textarea>
+        <br />
+        <div class="parameter-content-type" />
+			{{else}}
+				<textarea class='body-textarea' name='{{{escape name}}}' id='{{{escape valueId}}}'></textarea>
+				<div class="editor_holder"></div>
+				<br />
+				<div class="parameter-content-type" />
+			{{/if}}
+		{{/if}}
+	{{else}}
+		{{#if isFile}}
+			<input type="file" name='{{{escape name}}}' id='{{{escape valueId}}}'/>
+			<div class="parameter-content-type" />
+		{{else}}
+			{{#renderTextParam this}}
+			{{/renderTextParam}}
+		{{/if}}
+	{{/if}}
+
+</td>
+<td data-th="Value" class="markdown">{{{sanitize description}}}</td>
+<td data-th="Parameter Type">{{{escape paramType}}}</td>
+<td data-th="Data Type">
+	<span class="model-signature"></span>
+</td>

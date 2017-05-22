@@ -1,0 +1,19 @@
+<td data-th="Parameter" class='code{{#if required}} required{{/if}}'><label for='{{{escape valueId}}}'>{{{sanitize name}}}</label></td>
+<td data-th="Value">
+  <select  {{#isArray this}} multiple="multiple"{{/isArray}} class="parameter select_parameter {{#if required}} required {{/if}}" name="{{{sanitize name}}}" id="{{{escape valueId}}}">
+
+    {{#unless required}}
+      <option {{#unless hasDefault}}  selected="" {{/unless}} value=''></option>
+    {{/unless}}
+
+    {{#each allowableValues.descriptiveValues}}
+
+      <option {{#if isDefault}} selected=""  {{/if}}  value='{{{sanitize value}}}'> {{{sanitize value}}} {{#if isDefault}} (default) {{/if}} </option>
+
+    {{/each}}
+
+  </select>
+</td>
+<td data-th="Description" class="markdown ">{{#if required}}<span>{{/if}}{{{description}}}{{#if required}}</span>{{/if}}</td>
+<td data-th="Parameter Type">{{{escape paramType}}}</td>
+<td data-th="Data Type"><span class="model-signature"></span></td>
